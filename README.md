@@ -1,6 +1,71 @@
 # Claude Code Template Library
 
-A collection of reusable Claude Code configurations for different project types. These templates provide pre-configured specialized agents, slash commands, and skills to accelerate development.
+A **single-point-of-change** system for managing Claude Code configurations across all your projects. Edit once, update everywhere.
+
+## 🎯 Key Features
+
+- **Shared Configuration** - Universal agents, commands, and skills synced via symlinks
+- **Single Point of Change** - Edit `.shared/` once, all projects update instantly
+- **Template-Based** - Project-type templates with specialized capabilities
+- **Automated Setup** - One-command initialization for new projects
+- **Git-Friendly** - Version controlled, collaborative, with proper .gitignore patterns
+
+## 🚀 Quick Start
+
+### New Project
+
+```bash
+# Initialize with shared configuration only
+~/Documents/PRIVATE/claude-templates/scripts/setup-claude.sh ~/path/to/project
+
+# Or with a template
+~/Documents/PRIVATE/claude-templates/scripts/setup-claude.sh ~/path/to/project --template react-pwa
+```
+
+### Existing Project
+
+```bash
+cd your-project
+~/Documents/PRIVATE/claude-templates/scripts/setup-claude.sh .
+```
+
+**Result:** Your project now has access to all shared agents and commands, plus any template-specific additions.
+
+## 📚 Documentation
+
+- **[Setup Guide](docs/SETUP_GUIDE.md)** - Detailed setup and usage instructions
+- **[Shared Config](/.shared/README.md)** - Universal agents and commands reference
+- **Templates** - See individual template directories for specialized capabilities
+
+## Architecture Overview
+
+```
+claude-templates/
+├── .shared/              # ⭐ SINGLE SOURCE OF TRUTH
+│   ├── agents/          # Universal agents (5 agents)
+│   ├── commands/        # Universal commands (7 commands)
+│   └── skills/          # Universal skills
+├── templates/           # Project type templates
+│   ├── music-app/
+│   ├── react-pwa/
+│   ├── firebase-app/
+│   └── backend-api/
+└── scripts/
+    └── setup-claude.sh  # Automated setup script
+```
+
+### How It Works
+
+Each project's `.claude/` directory contains:
+- **Symlinks** to `.shared/agents/`, `.shared/commands/`, `.shared/skills/`
+- **Project-specific files** (instructions.md, settings.local.json)
+- **Template-specific files** (if using a template)
+
+**Benefits:**
+- Edit a shared agent once → All projects see the change
+- No manual copying or syncing needed
+- Consistent capabilities across all projects
+- Easy to maintain and update
 
 ## Available Templates
 
@@ -71,46 +136,51 @@ RESTful API backend with Node.js, TypeScript, and Express. Includes authenticati
 
 ---
 
-## Quick Start
+## 📖 Universal Configuration (Always Available)
 
-### 1. Initialize a New Project
+All projects with symlinks to `.shared/` get these capabilities:
 
-```bash
-# Copy template to your new project
-cp -r ~/Documents/PRIVATE/claude-templates/templates/react-pwa/.claude /path/to/your/new/project/
+### Universal Agents
+- **codebase-analyzer** - Analyzes implementation details
+- **codebase-locator** - Finds files and components
+- **codebase-pattern-finder** - Discovers patterns and examples
+- **test-engineer** - Testing specialist
+- **web-search-researcher** - Web research and information gathering
 
-# Or use the init script (coming in Phase 4)
-claude-init react-pwa /path/to/your/new/project
-```
+### Universal Commands
+- **/commit** - Create git commits with proper workflow
+- **/create_plan** - Create detailed implementation plans
+- **/implement_plan** - Implement plans with verification
+- **/validate_plan** - Validate implementations against plans
+- **/create_handoff** - Create handoff documents
+- **/resume_handoff** - Resume from handoff documents
+- **/research_codebase** - Document codebase comprehensively
 
-### 2. Verify Global MCP Configuration
+## 🎨 Working with Shared Configuration
 
-Ensure your global MCP secrets are configured (see Phase 1):
+### Adding Universal Content
 
-```bash
-# Check that secrets file exists
-cat ~/.config/claude-mcp/mcp-secrets.env
-
-# Verify VS Code mcp.json uses environment variables
-cat ~/Library/Application\ Support/Code/User/mcp.json
-```
-
-### 3. Configure Project-Specific Settings (if needed)
-
-```bash
-# Create local settings for project-specific overrides
-cp .claude/settings.local.json.example .claude/settings.local.json
-# Edit with your project-specific settings
-```
-
-### 4. Start Development
+To add an agent/command that ALL projects should have:
 
 ```bash
-# Open project in VS Code
-code /path/to/your/new/project
-
-# Claude Code will automatically load the .claude/ configuration
+cd ~/Documents/PRIVATE/claude-templates/.shared/agents
+nano my-new-agent.md
+git commit -am "feat: Add new universal agent"
+git push
 ```
+
+**Result:** All projects see the new agent immediately via symlinks.
+
+### Updating Shared Content
+
+```bash
+cd ~/Documents/PRIVATE/claude-templates/.shared/agents
+nano codebase-analyzer.md  # Make improvements
+git commit -am "improve: Better pattern detection"
+git push
+```
+
+**Result:** All projects get the update instantly.
 
 ---
 
