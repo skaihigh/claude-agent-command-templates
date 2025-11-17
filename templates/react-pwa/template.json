@@ -1,0 +1,97 @@
+{
+  "name": "react-pwa",
+  "displayName": "React PWA Template",
+  "description": "Progressive Web App with React, TypeScript, and offline-first architecture. Optimized for performance and mobile experience.",
+  "version": "1.0.0",
+  "author": "Christian Mesloes Kaiaa",
+  "created": "2025-11-17",
+  "tags": ["react", "typescript", "pwa", "offline-first", "vite"],
+
+  "tech_stack": {
+    "frontend": ["React 18", "TypeScript", "Vite", "TailwindCSS"],
+    "pwa": ["Service Workers", "Workbox", "IndexedDB", "Cache API"],
+    "testing": ["Vitest", "Testing Library"],
+    "tooling": ["ESLint", "Prettier", "TypeScript"]
+  },
+
+  "required_mcps": [],
+
+  "optional_mcps": [
+    {
+      "name": "tavily-mcp",
+      "description": "Web search for documentation lookup",
+      "env_vars": ["TAVILY_API_KEY"]
+    },
+    {
+      "name": "@allpepper/memory-bank-mcp",
+      "description": "Project memory and context management",
+      "env_vars": ["MEMORY_BANK_ROOT"]
+    }
+  ],
+
+  "specialized_agents": [
+    {
+      "name": "pwa-specialist",
+      "description": "Progressive Web Apps, service workers, caching strategies, and offline-first architecture"
+    },
+    {
+      "name": "react-architect",
+      "description": "React + TypeScript component design, state management, and performance optimization"
+    },
+    {
+      "name": "test-engineer",
+      "description": "Unit, integration, E2E tests"
+    }
+  ],
+
+  "slash_commands": [
+    "/implement_plan",
+    "/test-coverage",
+    "/create_plan",
+    "/validate_plan",
+    "/new-component",
+    "/pwa-check"
+  ],
+
+  "skills": [
+    {
+      "name": "pwa-troubleshooting",
+      "description": "Debug PWA issues including service workers, caching, and offline functionality"
+    }
+  ],
+
+  "project_structure": {
+    "src/components": "React components",
+    "src/hooks": "Custom React hooks",
+    "src/services": "Business logic and API services",
+    "src/utils": "Utility functions",
+    "public/": "Static assets"
+  },
+
+  "setup_instructions": [
+    "1. Copy .claude/ directory to your new React PWA project",
+    "2. Ensure global MCP secrets are configured (~/.config/claude-mcp/mcp-secrets.env)",
+    "3. Install dependencies: pnpm install",
+    "4. Start dev server: pnpm dev",
+    "5. Build for production: pnpm build",
+    "6. Preview production build: pnpm preview"
+  ],
+
+  "gitignore_additions": [
+    "# Build output",
+    "dist/",
+    "dist-ssr/",
+    "",
+    "# Environment variables",
+    ".env.local",
+    ".env.*.local"
+  ],
+
+  "notes": [
+    "Minimal PWA template focused on offline-first architecture",
+    "Includes service worker setup with Workbox",
+    "TypeScript strict mode enabled",
+    "TailwindCSS for styling",
+    "Optimized for fast builds with Vite"
+  ]
+}

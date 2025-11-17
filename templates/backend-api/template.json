@@ -1,0 +1,105 @@
+{
+  "name": "backend-api",
+  "displayName": "Node.js Backend API",
+  "description": "RESTful API backend with Node.js, TypeScript, and Express. Includes authentication, database integration, and API documentation.",
+  "version": "1.0.0",
+  "author": "Christian Mesloes Kaiaa",
+  "created": "2025-11-17",
+  "tags": ["nodejs", "typescript", "express", "api", "backend", "rest"],
+
+  "tech_stack": {
+    "runtime": ["Node.js", "TypeScript"],
+    "framework": ["Express"],
+    "database": ["PostgreSQL", "Prisma ORM"],
+    "auth": ["JWT", "bcrypt"],
+    "testing": ["Vitest", "Supertest"],
+    "docs": ["OpenAPI/Swagger"],
+    "tooling": ["ESLint", "Prettier", "TypeScript", "nodemon"]
+  },
+
+  "required_mcps": [],
+
+  "optional_mcps": [
+    {
+      "name": "tavily-mcp",
+      "description": "Web search for documentation lookup",
+      "env_vars": ["TAVILY_API_KEY"]
+    },
+    {
+      "name": "@allpepper/memory-bank-mcp",
+      "description": "Project memory and context management",
+      "env_vars": ["MEMORY_BANK_ROOT"]
+    }
+  ],
+
+  "specialized_agents": [
+    {
+      "name": "test-engineer",
+      "description": "Unit, integration, and API tests"
+    },
+    {
+      "name": "codebase-analyzer",
+      "description": "Analyzes codebase implementation details"
+    }
+  ],
+
+  "slash_commands": [
+    "/implement_plan",
+    "/test-coverage",
+    "/create_plan",
+    "/validate_plan",
+    "/research_codebase"
+  ],
+
+  "skills": [],
+
+  "project_structure": {
+    "src/routes": "API route handlers",
+    "src/controllers": "Request controllers",
+    "src/services": "Business logic layer",
+    "src/models": "Data models and schemas",
+    "src/middleware": "Express middleware",
+    "src/utils": "Utility functions",
+    "prisma/": "Database schema and migrations",
+    "tests/": "API and unit tests"
+  },
+
+  "setup_instructions": [
+    "1. Copy .claude/ directory to your new backend API project",
+    "2. Ensure global MCP secrets are configured (~/.config/claude-mcp/mcp-secrets.env)",
+    "3. Install dependencies: pnpm install",
+    "4. Set up database: Create PostgreSQL database",
+    "5. Configure .env with DATABASE_URL and JWT_SECRET",
+    "6. Run migrations: pnpm prisma migrate dev",
+    "7. Start dev server: pnpm dev",
+    "8. Access API docs: http://localhost:3000/api-docs"
+  ],
+
+  "gitignore_additions": [
+    "# Environment variables with secrets",
+    ".env",
+    ".env.local",
+    ".env.*.local",
+    "",
+    "# Build output",
+    "dist/",
+    "build/",
+    "",
+    "# Database",
+    "*.db",
+    "*.sqlite",
+    "",
+    "# Logs",
+    "logs/",
+    "*.log"
+  ],
+
+  "notes": [
+    "RESTful API with Express and TypeScript",
+    "JWT-based authentication",
+    "Prisma ORM for type-safe database access",
+    "OpenAPI/Swagger documentation",
+    "Comprehensive error handling middleware",
+    "Rate limiting and security headers"
+  ]
+}

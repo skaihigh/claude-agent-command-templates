@@ -1,0 +1,39 @@
+# Claude Code Template Library - Git Ignore
+
+# OS Files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Secrets (NEVER commit)
+*secrets*.json
+*secrets*.env
+*api-keys*.json
+.env
+.env.local
+.env.*.local
+
+# Local settings overrides
+.claude/settings.local.json
+.claude/**/*.local.md
+.claude/.env
+.mcp.local.json
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Node modules (if we add any scripts)
+node_modules/
+
+# Test projects (don't commit test instances)
+test-projects/
+examples/*/node_modules/
+examples/*/.env.local
