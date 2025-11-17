@@ -1,0 +1,42 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  "mcpServers": {
+    "_comment": "Project-specific MCP servers that aren't in your global VS Code config",
+    "example-project-server": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-server"],
+      "env": {
+        "PROJECT_SPECIFIC_API_KEY": "${PROJECT_SPECIFIC_API_KEY}"
+      }
+    }
+  },
+  "customInstructions": {
+    "_comment": "Project-specific instructions for Claude Code",
+    "codeStyle": "Follow the project's existing code style. Use TypeScript strict mode.",
+    "testingStrategy": "Write tests for all new components. Use Firebase Emulator Suite for testing.",
+    "security": "Always update Firestore and Storage security rules when changing data model."
+  },
+  "projectContext": {
+    "_comment": "Important project-specific context for Claude Code",
+    "architecture": "Feature-based architecture with Firebase backend",
+    "firebaseProject": "YOUR_FIREBASE_PROJECT_ID",
+    "deploymentUrl": "https://your-app.web.app",
+    "regions": "us-central1"
+  },
+  "secrets": {
+    "_comment": "NEVER commit actual secrets here! Use environment variables.",
+    "_example": {
+      "firebase": {
+        "apiKey": "${FIREBASE_API_KEY}",
+        "authDomain": "${FIREBASE_AUTH_DOMAIN}",
+        "projectId": "${FIREBASE_PROJECT_ID}",
+        "storageBucket": "${FIREBASE_STORAGE_BUCKET}",
+        "messagingSenderId": "${FIREBASE_MESSAGING_SENDER_ID}",
+        "appId": "${FIREBASE_APP_ID}"
+      },
+      "external": {
+        "thirdPartyApiKey": "${THIRD_PARTY_API_KEY}"
+      }
+    }
+  }
+}

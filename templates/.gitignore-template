@@ -1,0 +1,234 @@
+# Claude Code Template Library - .gitignore Template
+# Add these patterns to your project's .gitignore to protect secrets
+
+# ============================================================================
+# SECURITY: Claude Code & MCP Secrets (NEVER COMMIT)
+# ============================================================================
+
+# Claude Code local settings (project-specific)
+.claude/settings.local.json
+.claude/**/*.local.md
+.claude/.env
+.mcp.local.json
+
+# Secret files (any naming pattern)
+*secrets*.json
+*secrets*.env
+*api-keys*.json
+*api-keys*.env
+*credentials*.json
+*credentials*.env
+
+# ============================================================================
+# ENVIRONMENT VARIABLES (NEVER COMMIT)
+# ============================================================================
+
+# General environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.staging
+.env.production
+
+# Backup env files
+.env.backup
+.env.*.backup
+
+# ============================================================================
+# FIREBASE (If using Firebase)
+# ============================================================================
+
+# Firebase Admin SDK (EXTREMELY SENSITIVE - NEVER COMMIT!)
+*firebase-adminsdk*.json
+serviceAccountKey.json
+service-account*.json
+
+# Firebase cache and debug logs
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+database-debug.log
+pubsub-debug.log
+*.cache
+
+# Firebase Functions
+functions/.env
+functions/**/.env
+functions/node_modules/
+functions/lib/
+functions/.runtimeconfig.json
+
+# ============================================================================
+# BUILD OUTPUT & DEPENDENCIES
+# ============================================================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Build output
+dist/
+dist-ssr/
+build/
+.next/
+out/
+*.local
+
+# ============================================================================
+# DATABASES
+# ============================================================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL dumps
+*.dump
+*.sql.gz
+
+# ============================================================================
+# EDITOR & IDE
+# ============================================================================
+
+# VS Code (keep extensions.json for recommended extensions)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# OPERATING SYSTEM
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ============================================================================
+# TESTING & COVERAGE
+# ============================================================================
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Test results
+.vitest/
+test-results/
+playwright-report/
+
+# ============================================================================
+# TEMPORARY & MISC
+# ============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# Backups
+*.backup
+*.bak
+*.old
+
+# Archives (unless intentionally versioned)
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================================
+# PROJECT-SPECIFIC (Uncomment as needed)
+# ============================================================================
+
+# Storybook build
+# storybook-static/
+
+# Cypress
+# cypress/videos/
+# cypress/screenshots/
+
+# AWS
+# .aws/
+
+# Docker
+# .dockerignore
+
+# Terraform
+# *.tfstate
+# *.tfstate.backup
+# .terraform/
+
+# ============================================================================
+# IMPORTANT NOTES
+# ============================================================================
+
+# 1. NEVER commit files containing:
+#    - API keys, tokens, secrets
+#    - Database credentials
+#    - Firebase service account keys
+#    - Private keys (.pem, .key files)
+#    - OAuth client secrets
+#    - Webhook secrets
+
+# 2. If you accidentally commit a secret:
+#    - Immediately rotate/regenerate the secret
+#    - Remove from git history (git filter-branch or BFG Repo-Cleaner)
+#    - Force push (coordinate with team!)
+#    - Consider the secret compromised
+
+# 3. Always verify before committing:
+#    git status
+#    git diff
+#    # Review every file being committed
+
+# 4. Use environment variables for all secrets:
+#    - Global MCP: ~/.config/claude-mcp/mcp-secrets.env
+#    - Project: .env.local
+#    - Server: .env (backend) or Cloud Functions secrets

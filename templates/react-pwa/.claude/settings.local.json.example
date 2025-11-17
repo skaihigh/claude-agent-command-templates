@@ -1,0 +1,33 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  "mcpServers": {
+    "_comment": "Project-specific MCP servers that aren't in your global VS Code config",
+    "example-project-server": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-server"],
+      "env": {
+        "PROJECT_SPECIFIC_API_KEY": "${PROJECT_SPECIFIC_API_KEY}"
+      }
+    }
+  },
+  "customInstructions": {
+    "_comment": "Project-specific instructions for Claude Code",
+    "codeStyle": "Follow the project's existing code style. Use TypeScript strict mode.",
+    "testingStrategy": "Write tests for all new components. Use Vitest and Testing Library.",
+    "pwa": "Implement offline-first architecture. Test service worker thoroughly."
+  },
+  "projectContext": {
+    "_comment": "Important project-specific context for Claude Code",
+    "architecture": "Component-based architecture in src/components/",
+    "deploymentUrl": "https://your-app.example.com"
+  },
+  "secrets": {
+    "_comment": "NEVER commit actual secrets here! Use environment variables.",
+    "_example": {
+      "api": {
+        "baseUrl": "${API_BASE_URL}",
+        "apiKey": "${API_KEY}"
+      }
+    }
+  }
+}

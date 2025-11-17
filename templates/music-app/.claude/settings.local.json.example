@@ -1,0 +1,41 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  "mcpServers": {
+    "_comment": "Project-specific MCP servers that aren't in your global VS Code config",
+    "example-project-server": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-server"],
+      "env": {
+        "PROJECT_SPECIFIC_API_KEY": "${PROJECT_SPECIFIC_API_KEY}"
+      }
+    }
+  },
+  "customInstructions": {
+    "_comment": "Project-specific instructions for Claude Code",
+    "codeStyle": "Follow the project's existing code style. Use TypeScript strict mode.",
+    "testingStrategy": "Write tests for all new components. Use Vitest and Testing Library.",
+    "audioFeatures": "When working with audio, preserve pitch and implement proper caching.",
+    "accessibility": "Ensure all features are accessible to users age 10+ with varying abilities.",
+    "i18n": "All user-facing text must use i18next translation keys. Support en-GB, nb-NO, pl-PL."
+  },
+  "projectContext": {
+    "_comment": "Important project-specific context for Claude Code",
+    "architecture": "Feature-based architecture in src/features/",
+    "firebaseProject": "YOUR_FIREBASE_PROJECT_ID",
+    "tenantId": "YOUR_TENANT_ID",
+    "deploymentUrl": "https://your-app.web.app"
+  },
+  "secrets": {
+    "_comment": "NEVER commit actual secrets here! Use environment variables.",
+    "_example": {
+      "firebase": {
+        "apiKey": "${FIREBASE_API_KEY}",
+        "authDomain": "${FIREBASE_AUTH_DOMAIN}",
+        "projectId": "${FIREBASE_PROJECT_ID}"
+      },
+      "external": {
+        "musicLibraryApiKey": "${MUSIC_LIBRARY_API_KEY}"
+      }
+    }
+  }
+}

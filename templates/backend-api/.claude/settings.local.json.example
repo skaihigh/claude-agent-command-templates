@@ -1,0 +1,44 @@
+{
+  "$schema": "https://claude.ai/schemas/settings.json",
+  "mcpServers": {
+    "_comment": "Project-specific MCP servers that aren't in your global VS Code config",
+    "example-project-server": {
+      "command": "npx",
+      "args": ["-y", "some-mcp-server"],
+      "env": {
+        "PROJECT_SPECIFIC_API_KEY": "${PROJECT_SPECIFIC_API_KEY}"
+      }
+    }
+  },
+  "customInstructions": {
+    "_comment": "Project-specific instructions for Claude Code",
+    "codeStyle": "Follow the project's existing code style. Use TypeScript strict mode.",
+    "testingStrategy": "Write integration tests for all API endpoints. Use Supertest.",
+    "security": "Always validate and sanitize user input. Implement rate limiting.",
+    "database": "Use Prisma migrations for all schema changes. Never modify DB directly."
+  },
+  "projectContext": {
+    "_comment": "Important project-specific context for Claude Code",
+    "architecture": "Layered architecture: routes -> controllers -> services -> models",
+    "database": "PostgreSQL with Prisma ORM",
+    "apiVersion": "v1",
+    "deploymentUrl": "https://api.your-app.example.com"
+  },
+  "secrets": {
+    "_comment": "NEVER commit actual secrets here! Use environment variables.",
+    "_example": {
+      "database": {
+        "url": "${DATABASE_URL}",
+        "directUrl": "${DIRECT_DATABASE_URL}"
+      },
+      "auth": {
+        "jwtSecret": "${JWT_SECRET}",
+        "jwtRefreshSecret": "${JWT_REFRESH_SECRET}"
+      },
+      "external": {
+        "stripeApiKey": "${STRIPE_API_KEY}",
+        "sendgridApiKey": "${SENDGRID_API_KEY}"
+      }
+    }
+  }
+}
