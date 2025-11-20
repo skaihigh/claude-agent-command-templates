@@ -355,7 +355,7 @@ Specialist in advanced audio capabilities for web applications.
 **Tools:** Read, Write, Edit, Glob, Grep, Bash
 
 **Purpose:**
-Expert in Progressive Web Apps, service workers, caching strategies, and offline-first architecture.
+Expert in Progressive Web Apps, service workers, caching strategies, and offline-first architecture for modern web applications.
 
 **Core Capabilities:**
 - **Service Worker Mastery** - Lifecycle management, caching strategies, background sync, update mechanisms
