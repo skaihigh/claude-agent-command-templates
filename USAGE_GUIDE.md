@@ -390,7 +390,7 @@ These items contain references to Christian's VSSK-shadecn project and should be
 Some commands reference specialized agents:
 - `/create_plan` uses `codebase-*` agents (✅ available)
 - `/storybook-audit` uses `storybook-expert` (✅ available)
-- `/a11y-audit` uses `accessibility-expert` (⚠️ has project-specific refs)
+- `/a11y-audit` uses `accessibility-expert` (✅ available)
 - `/test-coverage` uses `test-engineer` (⚠️ has project-specific refs)
 
 **Fallback:** If an agent isn't available or suitable, you can:
