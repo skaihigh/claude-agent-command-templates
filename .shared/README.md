@@ -18,23 +18,56 @@ All files in this directory are symlinked from individual projects, providing:
 └── skills/          # Universal skills (reusable skill bundles)
 ```
 
-## Universal Agents
+## Universal Agents (10 total)
 
+### Codebase Analysis
 - **codebase-analyzer.md** - Analyzes codebase implementation details
 - **codebase-locator.md** - Locates files, directories, and components
 - **codebase-pattern-finder.md** - Finds similar implementations and patterns
-- **test-engineer.md** - Testing specialist
+
+### Development Specialists
+- **test-engineer.md** - Testing specialist for unit, integration, E2E tests
+- **storybook-expert.md** - Storybook component development and atomic design
+- **react-architect.md** - React + TypeScript architecture and best practices
+- **accessibility-expert.md** - WCAG compliance and accessibility testing
+
+### Domain Specialists
+- **audio-engineer.md** - Web Audio API, audio processing, and caching
+- **pwa-specialist.md** - Progressive Web Apps, service workers, offline-first
 - **web-search-researcher.md** - Web research and information gathering
 
-## Universal Commands
+## Universal Commands (19 total)
 
-- **commit.md** - Create git commits with proper workflow
-- **create_handoff.md** - Create handoff documents for transferring work
-- **create_plan.md** - Create detailed implementation plans
-- **implement_plan.md** - Implement technical plans with verification
-- **research_codebase.md** - Document codebase comprehensively
-- **resume_handoff.md** - Resume work from handoff documents
-- **validate_plan.md** - Validate implementation against plans
+### Planning & Implementation
+- **create_plan.md** (`/create_plan`) - Create detailed implementation plans
+- **implement_plan.md** (`/implement_plan`) - Implement technical plans with verification
+- **validate_plan.md** (`/validate_plan`) - Validate implementation against plans
+- **validate-fix.md** (`/validate-fix`) - Validate and fix implementation issues
+
+### Git & Deployment
+- **commit.md** (`/commit`) - Create git commits with proper workflow
+- **ship.md** (`/ship`) - Ship features to production with checklist
+
+### Handoffs & Documentation
+- **create_handoff.md** (`/create_handoff`) - Create handoff documents
+- **resume_handoff.md** (`/resume_handoff`) - Resume work from handoffs
+- **research_codebase.md** (`/research_codebase`) - Document codebase comprehensively
+
+### Component Development
+- **new-component.md** (`/new-component`) - Create new React components
+- **create-story.md** (`/create-story`) - Create Storybook stories for components
+- **storybook-audit.md** (`/storybook-audit`) - Audit codebase for Storybook opportunities
+
+### Audits & Quality
+- **docs-audit.md** (`/docs-audit`) - Audit and improve documentation
+- **test-coverage.md** (`/test-coverage`) - Analyze test coverage
+- **a11y-audit.md** (`/a11y-audit`) - Comprehensive accessibility audit
+- **pwa-check.md** (`/pwa-check`) - Check PWA configuration and offline functionality
+
+### Domain-Specific
+- **audio-impl.md** (`/audio-impl`) - Implement audio features with best practices
+- **research-tech.md** (`/research-tech`) - Research technology options
+- **phase-status.md** (`/phase-status`) - Check development phase status
 
 ## Usage in Projects
 
@@ -53,19 +86,47 @@ ln -s /path/to/claude-templates/.shared/skills skills
 2. All projects with symlinks automatically see the new content
 3. Commit to git to track the change
 
-## Template-Specific vs Universal
+## Philosophy: Universal vs Specialized
 
-**Universal (here):**
-- Capabilities useful across ALL project types
-- General-purpose agents and commands
-- Language/framework agnostic
-
-**Template-specific (in templates/):**
-- React-specific agents (react-architect, pwa-specialist)
-- Music-specific agents (audio-engineer, accessibility-expert)
-- Domain-specific commands (audio-impl, pwa-check)
+**Universal (here in .shared/):**
+All agents and commands that are useful across multiple projects are now stored centrally. This includes:
+- Codebase analysis tools (analyzer, locator, pattern-finder)
+- Development specialists (test-engineer, storybook-expert, react-architect)
+- Domain specialists (audio-engineer, pwa-specialist, accessibility-expert)
+- Planning and implementation commands
+- Quality and audit commands
+- Component development tools
 
 **Project-specific (in project/.claude/):**
 - instructions.md (project context and guidelines)
-- settings.local.json (project permissions)
-- Custom overrides when needed
+- settings.local.json (project permissions and MCP configuration)
+- Project-specific overrides when needed
+
+## Benefits of This Approach
+
+✅ **Single Source of Truth** - Update once, all projects benefit
+✅ **Consistent Tooling** - Same capabilities across all projects
+✅ **Easy Maintenance** - No duplication, no drift
+✅ **Instant Updates** - Symlinks mean changes propagate immediately
+✅ **Git-Tracked** - Version controlled shared configuration
+✅ **Portable** - Easy to set up new projects
+
+## Recently Added (2025-11-17)
+
+**New Agents:**
+- `storybook-expert.md` - Comprehensive Storybook expertise with atomic design
+- `accessibility-expert.md` - WCAG compliance and a11y testing
+- `audio-engineer.md` - Web Audio API specialist
+- `pwa-specialist.md` - Progressive Web App expert
+- `react-architect.md` - React + TypeScript architecture
+
+**New Commands:**
+- `/create-story` - Create Storybook stories with tests and a11y
+- `/storybook-audit` - Analyze codebase for Storybook opportunities
+- `/docs-audit` - Audit and improve documentation
+- `/a11y-audit` - Comprehensive accessibility audit
+- `/test-coverage` - Analyze test coverage
+- `/new-component` - Create new React components
+- `/pwa-check` - Check PWA configuration
+- `/audio-impl` - Implement audio features
+- `/ship` - Ship features to production
