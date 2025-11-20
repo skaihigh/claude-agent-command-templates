@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "description": "Configuration file for Claude Code Template Library. Copy this to .claude-templates.config.json in your project and customize.",
+
+  "project": {
+    "name": "your-project-name",
+    "description": "Brief description of your project",
+    "repository": "your-repo-name",
+    "type": "web-app"
+  },
+
+  "techStack": {
+    "languages": ["TypeScript", "JavaScript"],
+    "frontend": ["React", "Vite"],
+    "backend": [],
+    "database": [],
+    "testing": ["Vitest", "Playwright"],
+    "other": []
+  },
+
+  "packageManager": "npm",
+
+  "commands": {
+    "format": "npm run format",
+    "lint": "npm run lint",
+    "lintFix": "npm run lint --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "npm test",
+    "testCoverage": "npm run test:coverage",
+    "build": "npm run build",
+    "dev": "npm run dev"
+  },
+
+  "paths": {
+    "src": "src",
+    "components": "src/components",
+    "tests": "tests",
+    "docs": "docs",
+    "plans": "docs/plans",
+    "research": "docs/research",
+    "handoffs": "docs/handoffs"
+  },
+
+  "testing": {
+    "criticalPaths": [
+      "Authentication flow",
+      "Data persistence",
+      "Core business logic"
+    ],
+    "coverage": {
+      "critical": 100,
+      "important": 80,
+      "other": 60
+    }
+  },
+
+  "accessibility": {
+    "targetAudience": "General public",
+    "wcagLevel": "AA",
+    "specialRequirements": []
+  },
+
+  "deployment": {
+    "mainBranch": "main",
+    "productionBranch": "production",
+    "environments": ["development", "staging", "production"]
+  },
+
+  "customization": {
+    "enabledAgents": [
+      "codebase-analyzer",
+      "codebase-locator",
+      "codebase-pattern-finder",
+      "test-engineer",
+      "react-architect",
+      "accessibility-expert"
+    ],
+    "disabledAgents": [],
+    "customInstructions": ""
+  }
+}

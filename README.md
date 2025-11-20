@@ -31,11 +31,258 @@ cd your-project
 
 **Result:** Your project now has access to all shared agents and commands, plus any template-specific additions.
 
+---
+
+## 📦 Installation & Setup Options
+
+You can integrate this template library into your projects using three different methods. Choose based on your needs:
+
+### Option 1: Symlinks (Recommended)
+
+**Best for:** Active development where you want instant updates across all projects.
+
+**Pros:**
+- ✅ Edit once in `.shared/`, all projects update instantly
+- ✅ No git submodule complexity
+- ✅ Zero overhead - symlinks are instantaneous
+- ✅ Easy to manage and understand
+
+**Cons:**
+- ❌ Symlinks don't work well across different machines/file systems
+- ❌ Must have template library cloned locally
+
+**Setup:**
+
+```bash
+# 1. Clone the template library (one-time setup)
+git clone git@github.com:your-username/claude-templates.git ~/Documents/PRIVATE/claude-templates
+
+# 2. Navigate to your project
+cd ~/path/to/your-project
+
+# 3. Create .claude directory if it doesn't exist
+mkdir -p .claude
+
+# 4. Create symlinks to shared configuration
+cd .claude
+ln -s ~/Documents/PRIVATE/claude-templates/.shared/agents agents
+ln -s ~/Documents/PRIVATE/claude-templates/.shared/commands commands
+ln -s ~/Documents/PRIVATE/claude-templates/.shared/skills skills
+
+# 5. Create project-specific files
+touch instructions.md
+echo '{}' > settings.local.json
+
+# 6. Update .gitignore
+cat >> ../.gitignore << 'EOF'
+# Claude Code secrets (NEVER commit)
+.claude/settings.local.json
+.claude/**/*.local.md
+.claude/.env
+EOF
+```
+
+**Verification:**
+```bash
+# Check symlinks are working
+ls -la .claude/
+# You should see agents, commands, skills as symbolic links
+```
+
+---
+
+### Option 2: Git Submodule
+
+**Best for:** Teams that want version-controlled shared configuration with explicit update control.
+
+**Pros:**
+- ✅ Works across different machines and operating systems
+- ✅ Version controlled - pin to specific commits
+- ✅ Explicit updates via `git submodule update`
+- ✅ Works well in CI/CD pipelines
+
+**Cons:**
+- ❌ More complex to manage than symlinks
+- ❌ Updates require explicit `git submodule update` command
+- ❌ Learning curve for team members unfamiliar with submodules
+
+**Setup:**
+
+```bash
+# 1. Navigate to your project
+cd ~/path/to/your-project
+
+# 2. Add claude-templates as a submodule
+git submodule add git@github.com:your-username/claude-templates.git .claude-templates
+
+# 3. Create .claude directory structure
+mkdir -p .claude
+
+# 4. Create symlinks to submodule's shared config
+cd .claude
+ln -s ../.claude-templates/.shared/agents agents
+ln -s ../.claude-templates/.shared/commands commands
+ln -s ../.claude-templates/.shared/skills skills
+
+# 5. Create project-specific files
+touch instructions.md
+echo '{}' > settings.local.json
+
+# 6. Commit the submodule
+cd ..
+git add .gitmodules .claude-templates .claude/
+git commit -m "Add Claude Code templates as submodule"
+
+# 7. Update .gitignore
+cat >> .gitignore << 'EOF'
+# Claude Code secrets (NEVER commit)
+.claude/settings.local.json
+.claude/**/*.local.md
+.claude/.env
+EOF
+```
+
+**Updating to Latest:**
+```bash
+# Pull latest changes from template library
+cd .claude-templates
+git pull origin main
+cd ..
+git add .claude-templates
+git commit -m "Update Claude templates to latest"
+```
+
+**For Team Members Cloning:**
+```bash
+# Clone project with submodules
+git clone --recurse-submodules git@github.com:your-username/your-project.git
+
+# Or if already cloned without submodules
+git submodule init
+git submodule update
+```
+
+---
+
+### Option 3: Direct Copy (One-Time Setup)
+
+**Best for:** Projects that need customized templates or don't want external dependencies.
+
+**Pros:**
+- ✅ Complete independence - no external dependencies
+- ✅ Full customization without affecting other projects
+- ✅ Simple - just files in your repo
+- ✅ Works everywhere without special setup
+
+**Cons:**
+- ❌ No automatic updates - must manually sync changes
+- ❌ Duplication across projects
+- ❌ Can drift from template library over time
+
+**Setup:**
+
+```bash
+# 1. Clone the template library temporarily
+git clone git@github.com:your-username/claude-templates.git /tmp/claude-templates
+
+# 2. Navigate to your project
+cd ~/path/to/your-project
+
+# 3. Copy shared configuration
+mkdir -p .claude
+cp -r /tmp/claude-templates/.shared/agents .claude/agents
+cp -r /tmp/claude-templates/.shared/commands .claude/commands
+cp -r /tmp/claude-templates/.shared/skills .claude/skills
+
+# 4. (Optional) Copy a template's specialized config
+cp -r /tmp/claude-templates/templates/react-pwa/.claude/* .claude/
+
+# 5. Create project-specific files
+touch .claude/instructions.md
+echo '{}' > .claude/settings.local.json
+
+# 6. Clean up
+rm -rf /tmp/claude-templates
+
+# 7. Commit to your project
+git add .claude/
+git commit -m "Add Claude Code configuration"
+
+# 8. Update .gitignore
+cat >> .gitignore << 'EOF'
+# Claude Code secrets (NEVER commit)
+.claude/settings.local.json
+.claude/**/*.local.md
+.claude/.env
+EOF
+```
+
+**Updating:**
+```bash
+# Manually pull changes and copy updated files
+cd /tmp
+git clone git@github.com:your-username/claude-templates.git
+cp -r claude-templates/.shared/* ~/path/to/your-project/.claude/
+rm -rf claude-templates
+```
+
+---
+
+## 🔄 Comparison Matrix
+
+| Feature | Symlinks | Submodule | Direct Copy |
+|---------|----------|-----------|-------------|
+| **Instant Updates** | ✅ Yes | ❌ No (manual) | ❌ No (manual) |
+| **Cross-Machine** | ❌ No | ✅ Yes | ✅ Yes |
+| **Version Control** | Shared | ✅ Yes | ✅ Yes |
+| **Customization** | ❌ Limited | ❌ Limited | ✅ Full |
+| **Team Friendly** | ⚠️ Depends | ✅ Yes | ✅ Yes |
+| **CI/CD Compatible** | ❌ No | ✅ Yes | ✅ Yes |
+| **Complexity** | Low | Medium | Low |
+| **Best For** | Solo dev, local | Teams, production | Forking/custom |
+
+---
+
+## 🎯 Recommended Setup by Use Case
+
+**Solo Developer (Single Machine):**
+→ **Use Symlinks** - Simplest, instant updates
+
+**Team Development:**
+→ **Use Git Submodule** - Version controlled, works everywhere
+
+**Forking/Customization:**
+→ **Use Direct Copy** - Full control, no dependencies
+
+**CI/CD Pipeline:**
+→ **Use Git Submodule** or **Direct Copy** - Both work in automation
+
 ## 📚 Documentation
 
-- **[Setup Guide](docs/SETUP_GUIDE.md)** - Detailed setup and usage instructions
+- **[Quick Usage Guide](USAGE_GUIDE.md)** ⭐ START HERE - "I want to..." quick reference table
+- **[Agents & Commands Reference](AGENTS_COMMANDS_REFERENCE.md)** - Comprehensive guide to all agents, commands, and skills
+- **[Cross-Platform Usage](CROSS_PLATFORM_USAGE.md)** - How to use with GitHub Copilot, Cursor, Windsurf, Codeium
+- **[Known Issues](KNOWN_ISSUES.md)** ⚠️ IMPORTANT - Project-specific references that need adaptation
+- **[Setup Guide](docs/SETUP_GUIDE.md)** - Detailed setup and usage instructions (if exists)
 - **[Shared Config](/.shared/README.md)** - Universal agents and commands reference
 - **Templates** - See individual template directories for specialized capabilities
+
+---
+
+## ⚠️ Important Notice
+
+**Some agents and commands contain project-specific references** to the VSSK-shadecn music practice application. Before sharing with colleagues or using in other projects:
+
+1. **Read [KNOWN_ISSUES.md](KNOWN_ISSUES.md)** for complete list of issues
+2. **Use [USAGE_GUIDE.md](USAGE_GUIDE.md)** to identify which agents/commands work for your project type
+3. **Adapt or avoid** files marked with 🔴 CRITICAL issues
+
+**Quick Status:**
+- ✅ **Clean & Ready**: 5 agents, 1 command
+- ⚠️ **Needs Adaptation**: 7 agents, 18 commands
+- 🔴 **Critical Issues**: Files referencing "VSSK-shadecn", audio app features, or hardcoded values
+
+See [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for detailed breakdown and fixes.
 
 ## Architecture Overview
 
