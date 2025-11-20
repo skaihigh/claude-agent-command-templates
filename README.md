@@ -234,7 +234,7 @@ rm -rf claude-templates
 |---------|----------|-----------|-------------|
 | **Instant Updates** | ✅ Yes | ❌ No (manual) | ❌ No (manual) |
 | **Cross-Machine** | ❌ No | ✅ Yes | ✅ Yes |
-| **Version Control** | Shared | ✅ Yes | ✅ Yes |
+| **Version Control** | Not versioned (shared reference) | ✅ Yes | ✅ Yes |
 | **Customization** | ❌ Limited | ❌ Limited | ✅ Full |
 | **Team Friendly** | ⚠️ Depends | ✅ Yes | ✅ Yes |
 | **CI/CD Compatible** | ❌ No | ✅ Yes | ✅ Yes |
