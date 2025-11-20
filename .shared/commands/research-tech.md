@@ -12,11 +12,11 @@ Perform comprehensive research and analysis:
    - Current version and release history
    - Popularity and community size (GitHub stars, npm downloads)
 
-2. **VSSK-shadecn Fit**
-   - How does it address our specific needs?
-   - Compatibility with our stack (React, TypeScript, Vite)
+2. **Project Fit**
+   - How does it address your specific needs?
+   - Compatibility with your tech stack (check .claude-templates.config.json if available)
    - Bundle size impact (gzipped)
-   - Browser support (especially iOS Safari, Chrome Android)
+   - Browser support (based on your target browsers)
 
 3. **Evaluation Criteria** (from docs/TECHNOLOGY.md)
    - **Performance**: Speed, bundle size, memory usage

@@ -71,23 +71,23 @@ Based on the user's response, invoke the `storybook-expert` agent again with spe
 ## High Priority Components (Missing Stories)
 
 ### 🎯 Critical Functionality
-1. **AudioPlayer** (`src/components/audio/AudioPlayer.tsx`)
-   - Type: Organism
-   - Complexity: High
+1. **[ComponentName]** (`src/components/[path]/[ComponentName].tsx`)
+   - Type: Organism/Molecule/Atom
+   - Complexity: High/Medium/Low
    - Why: Core app functionality, complex state, accessibility critical
-   - Story needs: Play states, error handling, keyboard controls, a11y tests
+   - Story needs: Various states, error handling, keyboard controls, a11y tests
 
-2. **Looper** (`src/components/audio/Looper.tsx`)
+2. **[AnotherComponent]** (`src/components/[path]/[ComponentName].tsx`)
    - Type: Molecule
    - Complexity: Medium
-   - Reused: 3 locations
+   - Reused: X locations
    - Why: Reusable control component, needs documentation
 
 ### 🔄 Highly Reusable
-3. **CountdownTimer** (`src/components/ui/CountdownTimer.tsx`)
+3. **[ReusableComponent]** (`src/components/ui/[ComponentName].tsx`)
    - Type: Atom
    - Complexity: Low
-   - Reused: 5 locations
+   - Reused: X locations
    - Why: Simple, reusable, good documentation candidate
 
 [... continue for all high priority items ...]
@@ -108,16 +108,16 @@ Based on the user's response, invoke the `storybook-expert` agent again with spe
 
 ## Composition Opportunities
 
-### 1. Audio Control Panel (Organism)
-**Compose from**: AudioPlayer + Looper + BarTracker + CountdownTimer
-**Benefits**: Demonstrate full player UI, test component integration
-**Story types**: Default, Playing, With Loops, Error State
+### 1. [Complex Feature Component] (Organism)
+**Compose from**: [Component1] + [Component2] + [Component3] + [Component4]
+**Benefits**: Demonstrate full feature UI, test component integration
+**Story types**: Default, Active/Inactive states, Error states
 
-### 2. Settings Page Template (Template)
+### 2. [Page Template] (Template)
 **Compose from**: PageHeader + Card + Form components
 **Benefits**: Full page example, responsive behavior showcase
 
-### 3. Admin Dashboard (Page)
+### 3. [Dashboard/Admin Page] (Page)
 **Compose from**: Layout + PageHeader + DataTable + Charts
 **Benefits**: Complete page documentation
 
@@ -137,25 +137,25 @@ Based on the user's response, invoke the `storybook-expert` agent again with spe
 
 ## Implementation Roadmap
 
-### Phase 1: Critical Components (Week 1)
-1. AudioPlayer story + tests
-2. Looper story + tests
-3. BarTracker story + tests
+### Phase 1: Critical Components
+1. [Critical Component 1] story + tests
+2. [Critical Component 2] story + tests
+3. [Critical Component 3] story + tests
 4. Install a11y addon and test all existing stories
 
 **Estimated effort**: 8-12 hours
 
-### Phase 2: Reusable Atoms (Week 2)
-1. CountdownTimer
-2. StatusIndicator
-3. AudioControls
-4. VolumeSlider
+### Phase 2: Reusable Atoms
+1. [Reusable Component 1]
+2. [Reusable Component 2]
+3. [Reusable Component 3]
+4. [Reusable Component 4]
 
 **Estimated effort**: 6-8 hours
 
-### Phase 3: Enhancement & Composition (Week 3)
+### Phase 3: Enhancement & Composition
 1. Add play functions to existing stories
-2. Create Audio Control Panel organism
+2. Create [Complex Feature] organism
 3. Create page templates
 4. Add MDX documentation for complex components
 

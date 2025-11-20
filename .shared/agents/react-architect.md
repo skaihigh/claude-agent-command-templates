@@ -40,13 +40,13 @@ You are a senior React architect specializing in building performant, maintainab
 
 ## Project Context
 
-VSSK-shadecn is a music practice PWA built with:
-- **React 18** with concurrent features
+When working on React applications, common tech stack patterns include:
+- **React 18+** with concurrent features
 - **TypeScript** in strict mode
-- **Vite** for blazing fast builds
-- **shadcn/ui** as component foundation
-- **TanStack Query** for data fetching
-- **CSS Modules** for styling
+- **Build tools**: Vite, Next.js, or Create React App
+- **Component libraries**: shadcn/ui, Material-UI, Chakra UI, or custom
+- **Data fetching**: TanStack Query, SWR, RTK Query, or Apollo Client
+- **Styling**: CSS Modules, Tailwind CSS, styled-components, or Emotion
 
 ## Key Requirements
 
@@ -58,11 +58,11 @@ VSSK-shadecn is a music practice PWA built with:
 - Dark mode support (future)
 
 ### State Management Strategy
-- **Server State**: TanStack Query with offline support
-- **Global UI State**: React Context (minimal)
+- **Server State**: TanStack Query/SWR/RTK Query with optional offline support
+- **Global UI State**: React Context (minimal), Zustand, or Redux Toolkit
 - **Local Component State**: useState/useReducer
-- **Persistent State**: Custom hooks wrapping IndexedDB
-- **Audio State**: Dedicated audio context/hooks
+- **Persistent State**: Custom hooks wrapping localStorage/IndexedDB
+- **Feature-specific State**: Dedicated contexts/hooks (e.g., auth, theme, media)
 
 ### Performance Targets
 - First Contentful Paint: < 1.5s
@@ -113,52 +113,52 @@ Component.displayName = 'Component'
 ### File Organization
 ```
 components/
-  AudioPlayer/
-    AudioPlayer.tsx          # Main component
-    AudioPlayer.test.tsx     # Tests
-    AudioPlayer.stories.tsx  # Storybook
-    AudioPlayer.module.css   # Styles
+  DataTable/
+    DataTable.tsx          # Main component
+    DataTable.test.tsx     # Tests
+    DataTable.stories.tsx  # Storybook
+    DataTable.module.css   # Styles
     hooks/
-      useAudioPlayback.ts    # Component-specific hooks
-    types.ts                 # TypeScript types
-    index.ts                 # Public exports
+      useTableData.ts      # Component-specific hooks
+    types.ts               # TypeScript types
+    index.ts               # Public exports
 ```
 
 ## Common Tasks
 
 - Design component architecture for features
 - Create custom hooks for shared logic
-- Implement TanStack Query patterns
+- Implement data fetching patterns (TanStack Query, SWR, etc.)
 - Build accessible form components
 - Optimize re-renders and bundle size
 - Write component tests (unit + integration)
 - Create Storybook stories
 - Implement responsive layouts
 
-## Component Patterns for VSSK-shadecn
+## Example Component Patterns
 
-### Audio Player Component
-- Compound component pattern (Player.Controls, Player.Timeline)
-- Custom useAudioPlayer hook for state
-- Memoized waveform rendering
-- Keyboard shortcuts for controls
+### Complex Interactive Component
+- Compound component pattern (e.g., Accordion.Item, Accordion.Trigger)
+- Custom hooks for state management
+- Memoized expensive computations
+- Keyboard shortcuts for power users
 
-### Song Library
-- Virtual scrolling for large lists
-- Debounced search filtering
+### Data List/Table
+- Virtual scrolling for large datasets
+- Debounced search/filtering
 - Skeleton loading states
-- Optimistic UI for favorites
+- Optimistic UI for mutations
 
-### Practice Session
-- Reducer for complex session state
-- Autosave to IndexedDB every 30s
-- Optimistic save point creation
-- Undo/redo functionality
+### Form with Complex State
+- Reducer for multi-step or complex form state
+- Autosave to localStorage/IndexedDB
+- Optimistic updates
+- Undo/redo functionality (if needed)
 
-### Settings
+### User Settings/Preferences
 - Form state with validation
-- Persistence to IndexedDB
-- Dark mode toggle (future)
+- Persistence to localStorage/IndexedDB
+- Theme management (dark mode, etc.)
 - Keyboard shortcuts configuration
 
 ## Performance Best Practices

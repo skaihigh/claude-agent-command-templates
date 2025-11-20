@@ -95,7 +95,7 @@ Then wait for the user's research query.
      researcher: Claude
      git_commit: [Current commit hash]
      branch: [Current branch name]
-     repository: langChain_and_subAgents
+     repository: [repository name from git remote or config]
      topic: "[User's Question/Topic]"
      tags: [research, codebase, relevant-component-names]
      status: complete
@@ -109,7 +109,7 @@ Then wait for the user's research query.
      **Researcher**: Claude
      **Git Commit**: `[commit hash]`
      **Branch**: `[branch name]`
-     **Repository**: langChain_and_subAgents
+     **Repository**: [repository name]
 
      ## Research Question
      [Original user query]
