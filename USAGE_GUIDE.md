@@ -354,8 +354,6 @@ These items contain references to Christian's VSSK-shadecn project and should be
 
 ### ⚠️ Critical Issues (Don't use as-is):
 - `audio-engineer` agent - References "VSSK-shadecn music practice app"
-- `test-engineer` agent - References "VSSK-shadecn" testing priorities
-- `accessibility-expert` agent - References "young musicians age 10+"
 - `pwa-specialist` agent - References "VSSK-shadecn requirements"
 - `react-architect` agent - References "VSSK-shadecn" tech stack
 - `/audio-impl` command - Audio application specific
