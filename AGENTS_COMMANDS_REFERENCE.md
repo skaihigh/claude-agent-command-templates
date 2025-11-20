@@ -291,7 +291,7 @@ WCAG 2.1 AA compliance specialist ensuring applications are usable by all users,
 - **WCAG Compliance** - Perceivable, Operable, Understandable, Robust principles
 - **Keyboard Navigation** - Tab order, skip links, focus management, keyboard shortcuts
 - **Screen Reader Support** - Semantic HTML, ARIA labels, live regions, alternative text
-- **Age-Appropriate Design** - Simple language, large touch targets (44×44px), high contrast
+- **Universal Design Principles** - Simple language, large touch targets (44×44px), high contrast
 
 **When to Use:**
 - Reviewing components for accessibility
