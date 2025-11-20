@@ -11,11 +11,11 @@ Analyze test coverage for: $ARGUMENTS
    - Review coverage reports
    - Identify untested code paths
 
-2. **Critical Paths**
-   - Audio playback functionality
-   - Save point persistence
-   - Offline data sync
-   - User authentication (if applicable)
+2. **Critical Paths** (check .claude-templates.config.json for project-specific paths)
+   - Core business logic and workflows
+   - Data persistence and integrity
+   - External integrations (APIs, services)
+   - User authentication and authorization
 
 3. **Missing Tests**
    - List components without tests

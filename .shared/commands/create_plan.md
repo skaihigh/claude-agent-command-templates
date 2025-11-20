@@ -373,26 +373,26 @@ tags: [plan, implementation, relevant-components]
 
 ## Common Patterns
 
-### For New Agents:
-- Research existing agent patterns first
-- Start with agent definition in agents.py
-- Add required tools in tools.py
-- Update graph routing in graph.py
-- Add to main.py CLI if needed
-- Write tests
+### For New Features:
+- Research existing patterns in the codebase first
+- Identify where the feature logically belongs (module, component, service)
+- Follow established project conventions and architecture
+- Consider dependencies and integration points
+- Plan for testing from the start
 
-### For New Tools:
-- Define tool function in tools.py
-- Follow existing tool patterns
-- Add proper docstrings
-- Assign to appropriate agents
-- Test in isolation
+### For New Components (Frontend):
+- Follow atomic design principles
+- Ensure accessibility from the beginning
+- Create Storybook stories alongside the component
+- Write unit and integration tests
+- Consider responsive design
 
-### For Graph Changes:
-- Understand current routing logic
-- Plan conditional edge changes
-- Update supervisor prompts if needed
-- Test all routing paths
+### For New Services/APIs (Backend):
+- Follow RESTful or GraphQL conventions
+- Add proper validation and error handling
+- Document API endpoints
+- Write integration tests
+- Consider rate limiting and security
 
 ## Sub-task Spawning Best Practices
 

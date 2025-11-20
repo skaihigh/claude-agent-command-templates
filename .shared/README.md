@@ -111,6 +111,14 @@ All agents and commands that are useful across multiple projects are now stored 
 ✅ **Git-Tracked** - Version controlled shared configuration
 ✅ **Portable** - Easy to set up new projects
 
+## Detailed Documentation
+
+For comprehensive descriptions of each agent and command, see:
+- **[Quick Usage Guide](../USAGE_GUIDE.md)** ⭐ START HERE - "I want to..." quick reference table
+- **[Agents & Commands Reference](../AGENTS_COMMANDS_REFERENCE.md)** - Detailed guide with examples and use cases
+- **[Cross-Platform Usage](../CROSS_PLATFORM_USAGE.md)** - How to use with other AI assistants (Copilot, Cursor, Windsurf, Codeium)
+- **[Known Issues](../KNOWN_ISSUES.md)** ⚠️ IMPORTANT - Project-specific references that need adaptation before sharing
+
 ## Recently Added (2025-11-17)
 
 **New Agents:**
@@ -119,6 +127,8 @@ All agents and commands that are useful across multiple projects are now stored 
 - `audio-engineer.md` - Web Audio API specialist
 - `pwa-specialist.md` - Progressive Web App expert
 - `react-architect.md` - React + TypeScript architecture
+- `mobile-first-expert.md` - Mobile-first design and touch interface optimization
+- `visualization-expert.md` - Diagrams-as-code and accessible visualizations
 
 **New Commands:**
 - `/create-story` - Create Storybook stories with tests and a11y
@@ -129,4 +139,6 @@ All agents and commands that are useful across multiple projects are now stored 
 - `/new-component` - Create new React components
 - `/pwa-check` - Check PWA configuration
 - `/audio-impl` - Implement audio features
+- `/research-tech` - Research technology options
+- `/validate-fix` - Validate and auto-fix code quality
 - `/ship` - Ship features to production

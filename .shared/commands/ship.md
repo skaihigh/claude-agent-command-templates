@@ -99,7 +99,7 @@ For each logical chunk:
    - `chore`: Build/tooling changes
    - `style`: Code style changes
 
-   **Scope examples:** `player`, `library`, `i18n`, `SavePoints`, `translations`, etc.
+   **Scope examples:** `auth`, `ui`, `api`, `i18n`, `[ComponentName]`, `translations`, etc.
 
 3. **Create the commit:**
    ```bash
@@ -152,35 +152,35 @@ git push -u origin [current-branch]
 
 **Files changed:**
 
-- `src/i18n/locales/en-GB/player.json`
-- `src/i18n/locales/nb-NO/player.json`
-- `src/i18n/locales/pl-PL/player.json`
-- `src/features/player/components/SavePoints.tsx`
-- `src/features/player/components/LoopSection.tsx`
+- `src/i18n/locales/en-GB/feature.json`
+- `src/i18n/locales/nb-NO/feature.json`
+- `src/i18n/locales/pl-PL/feature.json`
+- `src/features/[feature]/components/ComponentA.tsx`
+- `src/features/[feature]/components/ComponentB.tsx`
 
 **Suggested commits:**
 
-1. `i18n(player): add translation keys for SavePoints and LoopSection`
+1. `i18n([feature]): add translation keys for ComponentA and ComponentB`
    - All 3 translation files
-2. `feat(player): internationalize SavePoints component`
-   - SavePoints.tsx
-3. `feat(player): internationalize LoopSection component`
-   - LoopSection.tsx
+2. `feat([feature]): internationalize ComponentA component`
+   - ComponentA.tsx
+3. `feat([feature]): internationalize ComponentB component`
+   - ComponentB.tsx
 
 ### Example 2: New Feature
 
 **Files changed:**
 
 - `src/utils/logger.ts`
-- `src/services/songService.ts`
+- `src/services/apiService.ts`
 - `docs/TECHNOLOGY.md`
 
 **Suggested commits:**
 
 1. `feat(utils): add logger utility for centralized error tracking`
    - logger.ts
-2. `refactor(services): update songService to use logger`
-   - songService.ts
+2. `refactor(services): update apiService to use logger`
+   - apiService.ts
 3. `docs: document logger utility in TECHNOLOGY.md`
    - TECHNOLOGY.md
 
@@ -188,13 +188,13 @@ git push -u origin [current-branch]
 
 **Files changed:**
 
-- `src/features/library/components/SongCard.tsx`
-- `src/i18n/locales/*/library.json`
+- `src/features/[feature]/components/DataCard.tsx`
+- `src/i18n/locales/*/[feature].json`
 
 **Suggested commits:**
 
-1. `fix(library): replace hardcoded 'Unknown' with translation key`
-   - SongCard.tsx + all library.json files
+1. `fix([feature]): replace hardcoded text with translation key`
+   - DataCard.tsx + all [feature].json files
 
 ## Safety Rules
 
