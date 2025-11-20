@@ -320,7 +320,7 @@ WCAG 2.1 AA compliance specialist ensuring applications are usable by all users 
 **Tools:** Read, Write, Edit, Glob, Grep, Bash, WebFetch
 
 **Purpose:**
-Specialist in Web Audio API, audio processing, pitch preservation, and audio caching for Progressive Web Apps.
+Specialist in advanced audio capabilities for web applications.
 
 **Core Capabilities:**
 - **Web Audio API** - Variable speed (0.25x-2.0x) with pitch preservation, buffer management, real-time effects
