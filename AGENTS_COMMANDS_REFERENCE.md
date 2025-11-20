@@ -219,7 +219,7 @@ Comprehensive testing specialist covering unit, integration, E2E, and accessibil
 - ✅ Integration with TypeScript, Vitest, Playwright
 
 **Test Coverage Priorities:**
-- **100% Critical:** Audio playback, offline functionality, data persistence
+- **100% Critical:** Core business logic and workflows, data persistence and integrity, external integrations
 - **80%+ Important:** UI components, user workflows, error handling
 - **As Needed:** Edge cases, browser compatibility
 
