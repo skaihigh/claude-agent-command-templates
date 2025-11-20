@@ -2,7 +2,7 @@
 
 This document lists all project-specific references in the shared agents and commands that need to be adapted for use in other projects.
 
-**Last Updated:** 2025-11-20
+**Last Updated:** 2025-01-15
 
 ---
 
