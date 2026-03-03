@@ -1,3 +1,8 @@
+---
+description: Storybook Component Audit & Implementation
+  Triggers: "storybook audit", "audit components", "component stories"
+---
+
 # Storybook Component Audit & Implementation
 
 When the user runs `/storybook-audit`, perform a comprehensive analysis of the codebase to identify Storybook opportunities and create a prioritized implementation plan.

@@ -1,5 +1,7 @@
 ---
-description: Check PWA configuration and offline functionality
+description: |
+  Check PWA configuration and offline functionality.
+  Triggers: "check pwa", "pwa status", "offline check", "service worker check"
 ---
 
 @pwa-specialist

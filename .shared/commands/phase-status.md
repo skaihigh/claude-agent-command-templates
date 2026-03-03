@@ -1,5 +1,7 @@
 ---
-description: Check current development phase status and show next steps
+description: |
+  Check current development phase status and show next steps.
+  Triggers: "phase status", "where are we", "current phase", "project status"
 ---
 
 Review the project's ROADMAP.md and provide:
